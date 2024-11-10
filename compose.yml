@@ -5,8 +5,6 @@ services:
   web:
     restart: always
     build: .
-    ports:
-      - "40:80"
     depends_on:
       - db
     env_file:
