@@ -1,13 +1,19 @@
 ## URL Shortener
-
-> [!NOTE]
+### Acknowledgements
+> [!WARNING]
 > A service for managing your redirects (Creating, deleting, editing, etc) is not included, however all you need to do is edit the objects in mongo for which you can use your own script or mongodb compass
+
+## Creating Redirects
+Make a database named url_shortener and a collection inside of it named redirects. In the redirects collection create an object with an id value and link value which is where you'll be redirected to.
+
+Using pymongo (This creates a redirect at /example, which takes you to https://example.com)
+``client.url_shortener.redirects.insert_one({"id": "example","link": "https://example.com"})``
 
 ## Deployment Options
 Depending on your needs, you're able to deploy the server either in a standalone container (behind your own reverse proxy), or with my docker compose preset which provides an all-in-one solution.
 
 ### Standalone Setup
-> [!WARNING]
+> [!NOTE]
 > You'll have to source your own database connection string as the docker image only includes a web server. (The string used below is a placeholder)
 
 ```
@@ -31,8 +37,3 @@ After that you should be good to start it up
 docker compose up -d
 ```
 
-## Creating Redirects
-Make a database named url_shortener and a collection inside of it named redirects. In the redirects collection create an object with an id value and link value which is where you'll be redirected to.
-
-Using pymongo (This creates a redirect at /example, which takes you to https://example.com)
-``client.url_shortener.redirects.insert_one({"id": "example","link": "https://example.com"})``
