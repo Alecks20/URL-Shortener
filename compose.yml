@@ -11,7 +11,7 @@ services:
     depends_on:
       - db
     environment:
-      - MONGO_URL=mongodb://mongo
+      - MONGO_URL=mongodb://db
 
   db:
     restart: always
