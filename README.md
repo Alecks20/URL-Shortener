@@ -5,7 +5,7 @@ Lightweight redirect server using flask, integrated with mongo
 > A service for managing your redirects (Creating, deleting, editing, etc) is not included, however all you need to do is edit the objects in mongo for which you can use your own script or mongodb compass.
 
 > [!NOTE]
-> This server is built for tight integration with https://alecks.dev and other services running there, hense why it uses MongoDB and not something local such as SQLite (Any why theres no dashboard)
+> This server is built for tight integration with https://alecks.dev and other services running there, hense why it uses MongoDB and not something local such as SQLite (And why theres no dashboard)
 
 ## Creating Redirects
 Make a database named url_shortener and a collection inside of it named redirects. In the redirects collection create an object with an id value and link value which is where you'll be redirected to.
