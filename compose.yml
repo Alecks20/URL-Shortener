@@ -5,26 +5,26 @@ services:
   web:
     restart: always
     build: .
-    container_name: url_shortener_web
     ports:
       - "40:80"
     depends_on:
       - db
-    environment:
-      - MONGO_URL=mongodb://db
+    env_file:
+      - .env
 
   db:
     restart: always
     image: mongo:latest
-    container_name: url_shortener_db
     volumes:
       - url_shortener_db:/data/db
+    env_file:
+      - .env
 
   proxy:
     image: caddy
     restart: always
-    environment:
-      - HOSTNAME="https://example.com"
+    env_file:
+      - .env
     ports:
       - "80:80"
       - "443:443"

@@ -10,8 +10,7 @@ app = Flask(__name__)
 @app.route("/<url>/")
 async def get_url(url):
     d = client.url_shortener.redirects.find_one({"id": url})
-    if d:
-      return redirect(d["link"])
+    return redirect(d["link"])
 
 
 if __name__ == '__main__':

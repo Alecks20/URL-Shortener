@@ -33,7 +33,8 @@ cd url-shortener
 ```
 Change the HOSTNAME variable to whatever url your server will be publically available (In compose.yml, line 25)
 ```
-nano compose.yml
+cp .env.example .env
+nano .env
 ```
 After that you should be good to start it up
 ```
