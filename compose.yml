@@ -3,7 +3,7 @@ version: '3.8'
 services:
 
   web:
-    restart: always
+    restart: unless-stopped
     build: .
     depends_on:
       - db
@@ -11,7 +11,7 @@ services:
       - .env
 
   db:
-    restart: always
+    restart: unless-stopped
     image: mongo:latest
     volumes:
       - url_shortener_db:/data/db
@@ -20,7 +20,7 @@ services:
 
   proxy:
     image: caddy
-    restart: always
+    restart: unless-stopped
     env_file:
       - .env
     ports:
