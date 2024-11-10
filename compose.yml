@@ -1,0 +1,38 @@
+version: '3.8'
+
+services:
+
+  web:
+    restart: always
+    build: .
+    container_name: url_shortener_web
+    ports:
+      - "40:80"
+    depends_on:
+      - db
+    environment:
+      - MONGO=mongodb://mongo
+
+  db:
+    restart: always
+    image: mongo:latest
+    container_name: url_shortener_db
+    volumes:
+      - url_shortener_db:/data/db
+
+  proxy:
+    image: caddy
+    restart: always
+    environment:
+      - HOSTNAME="https://example.com"
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile
+      - ./data/caddy-data:/data
+      - ./data/caddy-config:/config
+
+
+volumes:
+  url_shortener_db:
