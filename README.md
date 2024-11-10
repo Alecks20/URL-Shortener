@@ -16,7 +16,7 @@ docker run -d --name=url-shortener-web --restart=unless-stopped -p 80:80 -e MONG
 This creates a container named url-shortener-web and exposes it to port 80, make sure you change the MONGO_URL variable
 ### Compose Setup (All-in-one)
 > [!NOTE]
-> This includes a MongoDB database which is already configured for use and a Caddy reverse proxy for SSL/HTTPs.
+> This includes a MongoDB database which is already configured for use and a Caddy reverse proxy
 
 ```
 git clone https://github.com/alecks20/url-shortener
