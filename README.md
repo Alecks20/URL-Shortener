@@ -1,4 +1,5 @@
 ## URL Shortener
+Lightweight redirect server using flask, integrated with mongo
 ### Acknowledgements
 > [!WARNING]
 > A service for managing your redirects (Creating, deleting, editing, etc) is not included, however all you need to do is edit the objects in mongo for which you can use your own script or mongodb compass.
