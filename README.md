@@ -1,7 +1,7 @@
 ## URL Shortener
 ### Acknowledgements
 > [!WARNING]
-> A service for managing your redirects (Creating, deleting, editing, etc) is not included as on the production instance it's done via my api server which is currently closed-source (subject to change, but It'll be a while)
+> A service for managing your redirects (Creating, deleting, editing, etc) is a seperate service and integrated into my API
 
 ## Creating Redirects
 Make a database named url_shortener and a collection inside of it named redirects. In the redirects collection create an object with an id value and link value which is where you'll be redirected to.
